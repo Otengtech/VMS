@@ -62,7 +62,7 @@ const SuperAdminRoutes = () => (
   </Routes>
 );
 
-// Nested routes for Admin
+// Nested routes for Adm
 const AdminRoutes = () => (
   <Routes>
     <Route path="dashboard" element={<AdminDashboard />} />
