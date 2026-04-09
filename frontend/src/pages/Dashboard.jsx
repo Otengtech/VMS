@@ -29,6 +29,7 @@ import {
   Bar,
   Legend,
 } from "recharts";
+import { FiCheckCircle } from 'react-icons/fi';
 
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
@@ -359,18 +360,6 @@ const Dashboard = () => {
       iconColor: "text-red-600",
       navPath: "/trips/active",
       description: "Ongoing trips"
-    },
-    {
-      title: "Today's Revenue",
-      value: `₦${totalRevenueToday.toLocaleString()}`,
-      icon: FiBarChart2,
-      trend: "+0",
-      trendUp: true,
-      gradient: "from-emerald-500 to-emerald-600",
-      iconBg: "bg-emerald-100",
-      iconColor: "text-emerald-600",
-      navPath: "/trips/history",
-      description: "Total fare collected today"
     }
   ];
 
@@ -593,32 +582,6 @@ const Dashboard = () => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-        </div>
-      </div>
-
-      {/* Monthly Trend Chart */}
-      <div className="bg-white rounded-xl shadow p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <FiBarChart2 className="mr-2 text-blue-500" />
-            <h2 className="font-semibold text-gray-800">Monthly Trend</h2>
-          </div>
-          <span className="text-xs text-gray-500">Last 6 months</span>
-        </div>
-
-        <div className="h-80">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={monthlyTrendData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis yAxisId="left" orientation="left" stroke="#f59e0b" />
-              <YAxis yAxisId="right" orientation="right" stroke="#3b82f6" />
-              <Tooltip content={<CustomTooltip />} />
-              <Legend />
-              <Bar yAxisId="left" dataKey="trips" name="Number of Trips" fill="#f59e0b" />
-              <Bar yAxisId="right" dataKey="revenue" name="Revenue (₦)" fill="#3b82f6" />
-            </BarChart>
-          </ResponsiveContainer>
         </div>
       </div>
 
