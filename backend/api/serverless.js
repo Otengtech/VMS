@@ -11,6 +11,6 @@ export default async function handler(req, res) {
     app(req, res);
   } catch (err) {
     console.error('Serverless function error:', err);
-    res.status(500).json({ success: false, error: 'Database connection failed' });
+    res.status(500).json({ success: false, error: 'Database cannot be connected' });
   }
 }
