@@ -1,4 +1,4 @@
-import app from '../app.js';
+import app from '../src/app.js';
 import connectDB from '../config/database.js';
 
 // Cache the database connection across function invocations
