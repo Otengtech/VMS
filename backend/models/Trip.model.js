@@ -41,19 +41,6 @@ const tripSchema = new mongoose.Schema({
       required: true,
       min: 0
     },
-    details: [passengerSchema],
-    totalFare: {
-      type: Number,
-      default: 0
-    }
-  },
-  cargo: {
-    type: String,
-    trim: true
-  },
-  cargoWeight: {
-    type: Number,
-    default: 0
   },
   status: {
     type: String,
@@ -63,22 +50,6 @@ const tripSchema = new mongoose.Schema({
   notes: {
     type: String,
     trim: true
-  },
-  fuelStart: {
-    type: Number,
-    default: 0
-  },
-  fuelEnd: {
-    type: Number,
-    default: 0
-  },
-  odometerStart: {
-    type: Number,
-    default: 0
-  },
-  odometerEnd: {
-    type: Number,
-    default: 0
   },
   issues: {
     type: String,

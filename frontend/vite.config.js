@@ -11,4 +11,4 @@ export default defineConfig({
     historyApiFallback: true,
   },
   base: "/",
-})
+}) 

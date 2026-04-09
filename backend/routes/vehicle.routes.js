@@ -1,3 +1,4 @@
+// vehicle.routes.js
 import express from 'express';
 import {
   getVehicles,
@@ -15,13 +16,16 @@ const router = express.Router();
 
 router.use(protect);
 
-router.get('/', getVehicles);
+// These routes MUST come before the /:id routes
+router.post('/check-in', checkInVehicle);  // Make sure this is BEFORE /:id
+router.post('/check-out', checkOutVehicle);
 router.get('/checked-in', getCheckedInVehicles);
+
+// Then the parameterized routes
+router.get('/', getVehicles);
 router.get('/:id', getVehicle);
 router.post('/', createVehicle);
 router.put('/:id', updateVehicle);
 router.delete('/:id', deleteVehicle);
-router.post('/check-in', checkInVehicle);
-router.post('/check-out', checkOutVehicle);
 
 export default router;
