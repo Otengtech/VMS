@@ -451,13 +451,13 @@ const Dashboard = () => {
           >
             <div className="flex items-center justify-between">
               <div className="flex-1">
-                <h3 className="text-gray-300 text-sm font-medium mb-1">
+                <h3 className="text-gray-200 text-sm font-medium mb-1">
                   {stat.title}
                 </h3>
                 <p className="text-3xl text-amber-400 font-bold mb-1">
                   {stat.value}
                 </p>
-                <p className="text-gray-500 text-xs">{stat.description}</p>
+                <p className="text-gray-300 text-xs">{stat.description}</p>
               </div>
               
               <div className="p-3 rounded-full bg-amber-400/20 group-hover:bg-amber-400 transition-all duration-200">
